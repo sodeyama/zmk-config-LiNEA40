@@ -125,8 +125,8 @@
             bindings = <
 &lt 3 Q           &kp W         &kp E               &kp R    &kp T                                      &kp Y      &kp U  &kp I                &kp O           &mt RIGHT_COMMAND P
 &mt LCTRL A       &kp S         &kp D               &kp F    &kp G                                      &kp H      &kp J  &kp K                &kp L           &mt RIGHT_CONTROL MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C               &kp V    &kp B                                      &kp N      &kp M  &kp COMMA            &kp DOT         &mt RIGHT_SHIFT SLASH
-&lt 3 ESC         &kp LEFT_WIN  &mt LEFT_ALT GRAVE  &kp INS  &lt 4 SPACE  &lt 2 TAB    &lt 1 BACKSPACE  &kp ENTER         &lt 6 RIGHT_BRACKET  &kp LANGUAGE_1  &lt 3 LANGUAGE_2
+&mt LEFT_SHIFT Z  &kp X         &kp C               &kp V    &kp B                                      &kp N      &lt 6 M  &kp COMMA            &kp DOT         &mt RIGHT_SHIFT SLASH
+&lt 3 ESC         &kp LEFT_WIN  &mt LEFT_ALT GRAVE  &kp INS  &lt 4 SPACE  &lt 2 TAB    &kp BACKSPACE    &kp ENTER         &lt 1 RIGHT_BRACKET  &kp LANGUAGE_1  &lt 3 LANGUAGE_2
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
