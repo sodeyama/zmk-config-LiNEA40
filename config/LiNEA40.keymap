@@ -137,7 +137,7 @@
         SIMBOL_LAYER {
             bindings = <
 &kp EXCLAMATION  &kp AT_SIGN    &kp HASH          &kp DOLLAR  &kp PERCENT                           &kp NON_US_BACKSLASH  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL      &kp PLUS
-&kp QUESTION     &kp LESS_THAN  &kp GREATER_THAN  &trans      &trans                                &kp UNDERSCORE        &mkp LCLK             &mkp RCLK              &kp SEMICOLON  &kp COLON
+&kp QUESTION     &kp LESS_THAN  &kp GREATER_THAN  &trans      &trans                                &kp UNDERSCORE        &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp SEMICOLON  &kp COLON
 &kp CARET        &kp AMPERSAND  &kp ASTERISK      &kp GRAVE   &kp TILDE                             &kp PIPE              &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp COMMA      &kp DOUBLE_QUOTES
 &trans           &trans         &trans            &trans      &kp LG(V)    &kp LG(V)    &kp DELETE  &kp DELETE                                      &trans                 &trans         &trans
             >;
