@@ -126,7 +126,7 @@
 &lt 3 Q           &kp W         &kp E               &kp R    &kp T                                      &kp Y      &kp U  &kp I                &kp O           &mt RIGHT_COMMAND P
 &mt LCTRL A       &kp S         &kp D               &kp F    &kp G                                      &kp H      &kp J  &kp K                &kp L           &mt RIGHT_CONTROL MINUS
 &mt LEFT_SHIFT Z  &kp X         &kp C               &kp V    &kp B                                      &kp N      &kp M  &kp COMMA            &kp DOT         &mt RIGHT_SHIFT SLASH
-&lt 3 ESC         &kp LEFT_WIN  &mt LEFT_ALT GRAVE  &kp INS  &lt 4 SPACE  &lt 2 TAB    &lt 1 BACKSPACE  &kp ENTER         &lt 6 RIGHT_BRACKET  &kp LANGUAGE_1  &lt 3 LANGUAGE_2
+&lt 3 ESC         &kp LEFT_WIN  &mt LEFT_ALT GRAVE  &kp INS  &lt 4 SPACE  &lt 2 TAB    &lt 1 DELETE     &kp ENTER         &lt 6 RIGHT_BRACKET  &kp LANGUAGE_1  &lt 3 LANGUAGE_2
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
@@ -137,9 +137,9 @@
         SIMBOL_LAYER {
             bindings = <
 &kp EXCLAMATION  &kp AT_SIGN    &kp HASH          &kp DOLLAR  &kp PERCENT                           &kp NON_US_BACKSLASH  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL      &kp PLUS
-&kp QUESTION     &kp LESS_THAN  &kp GREATER_THAN  &trans      &trans                                &kp UNDERSCORE        &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp SEMICOLON  &kp COLON
+&kp QUESTION     &kp LESS_THAN  &kp GREATER_THAN  &trans      &trans                                &kp UNDERSCORE        &mkp LCLK             &mkp RCLK              &kp SEMICOLON  &kp COLON
 &kp CARET        &kp AMPERSAND  &kp ASTERISK      &kp GRAVE   &kp TILDE                             &kp PIPE              &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp COMMA      &kp DOUBLE_QUOTES
-&trans           &trans         &trans            &trans      &kp LG(V)    &kp LG(V)    &kp DELETE  &trans                                      &trans                 &trans         &trans
+&trans           &trans         &trans            &trans      &kp LG(V)    &kp LG(V)    &kp DELETE  &kp DELETE                                      &trans                 &trans         &trans
             >;
         };
 
