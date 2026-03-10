@@ -1,3 +1,5 @@
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <input/processors/runtime-input-processor.dtsi>
 #include "LiNEA40.dtsi"
 &default_transform {
     col-offset = <6>;
@@ -57,14 +59,17 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&xiao_d 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; //MOT-D6
-        automouse-layer = <4>;
-        snipe-layers = <2>;
-        scroll-layers = <3 5>;
-        //scroll-layers = <4 5 6>;
+        cpi = <800>;
+        invert-x;
+        invert-y;
+        evt-type = <INPUT_EV_REL>;
+        x-input-code = <INPUT_REL_X>;
+        y-input-code = <INPUT_REL_Y>;
     };
 };
 
 &trackball_listener {
     status = "okay";
     device = <&trackball>;
+    input-processors = <&mouse_runtime_input_processor>;
 };

@@ -2,6 +2,7 @@
 
 #include <dt-bindings/zmk/input_transform.h>
 #include <input/processors.dtsi>
+#include <input/processors/runtime-input-processor.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -50,6 +51,16 @@
         layers = <FUNCTION>;
         input-processors = <&zip_wheel_scaler 3 1>; //スクロールを3倍速にする
     };
+};
+
+&mouse_runtime_input_processor {
+    temp-layer-enabled;
+    temp-layer = <FUNCTION>;
+};
+
+&scroll_runtime_input_processor {
+    active-layers = <(BIT(CURSOR) | BIT(SCROLL))>;
+    xy-to-scroll-enabled;
 };
 
 &trackball_listener {
