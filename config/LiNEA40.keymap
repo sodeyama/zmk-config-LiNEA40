@@ -71,7 +71,7 @@
 };
 
 &scroll_runtime_input_processor {
-    active-layers = <(BIT(CURSOR) | BIT(SCROLL))>;
+    active-layers = <(BIT(CURSOR) | BIT(SCROLL) | BIT(FUNCTION))>;
     xy-to-scroll-enabled;
 };
 
