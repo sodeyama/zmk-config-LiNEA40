@@ -142,6 +142,11 @@
             bindings = <&kp LEFT_CONTROL>;
             key-positions = <10 11>;
         };
+
+        ToggleIME {
+            bindings = <&kp LANG_ZENKAKUHANKAKU>;
+            key-positions = <8 9>;
+        };
     };
 
     behaviors {
