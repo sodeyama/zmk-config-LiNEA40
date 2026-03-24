@@ -149,6 +149,14 @@
         };
     };
 
+    macros {
+        toggle_ime: toggle_ime {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(SPACE)>;
+        };
+    };
+
     behaviors {
         mt_hp: mod_tap_hold_preferred {
             compatible = "zmk,behavior-hold-tap";
@@ -165,6 +173,15 @@
             tapping-term-ms = <150>;
             quick-tap-ms = <150>;
             bindings = <&mo>, <&kp>;
+        };
+
+        lt_ime: layer_tap_ime {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <150>;
+            quick-tap-ms = <150>;
+            bindings = <&mo>, <&toggle_ime>;
         };
 
         re_kp: sensor_rotate_kp {
@@ -190,7 +207,7 @@
 &kp Q             &kp W         &kp E               &kp R    &lt_hp SNIPE T                              &kp Y        &kp U    &kp I                &kp O           &kp P
 &mt_hp LCTRL A    &kp S         &kp D               &kp F    &lt_hp 3 G                                    &kp H        &kp J    &kp K                &kp L           &mt RIGHT_CONTROL MINUS
 &mt LEFT_SHIFT Z  &kp X         &kp C               &kp V    &kp B                                    &kp N        &lt 6 M  &kp COMMA            &kp DOT         &mt RIGHT_SHIFT SLASH
-&lt 3 ESC         &kp LEFT_WIN  &mt LEFT_ALT GRAVE  &kp INS  &lt 4 SPACE  &lt 1 TAB    &kp BACKSPACE  &lt 1 ENTER           &lt 1 RIGHT_BRACKET  &kp LANGUAGE_1  &lt 3 LANGUAGE_2
+&lt 3 ESC         &kp LEFT_WIN  &mt LEFT_ALT GRAVE  &kp INS  &lt 4 SPACE  &lt 1 TAB    &kp BACKSPACE  &lt 1 ENTER           &lt 1 RIGHT_BRACKET  &kp LANGUAGE_1  &lt_ime 3 0
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
