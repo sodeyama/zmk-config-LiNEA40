@@ -150,6 +150,14 @@
     };
 
     behaviors {
+        lt_hp: layer_tap_hold_preferred {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&kp>;
+        };
+
         re_kp: sensor_rotate_kp {
             compatible = "zmk,behavior-sensor-rotate-var";
             #sensor-binding-cells = <2>;
@@ -170,8 +178,8 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W         &kp E               &kp R    &lt SNIPE T                              &kp Y        &kp U    &kp I                &kp O           &kp P
-&mt LCTRL A       &kp S         &kp D               &kp F    &lt 3 G                                    &kp H        &kp J    &kp K                &kp L           &mt RIGHT_CONTROL MINUS
+&kp Q             &kp W         &kp E               &kp R    &lt_hp SNIPE T                              &kp Y        &kp U    &kp I                &kp O           &kp P
+&mt LCTRL A       &kp S         &kp D               &kp F    &lt_hp 3 G                                    &kp H        &kp J    &kp K                &kp L           &mt RIGHT_CONTROL MINUS
 &mt LEFT_SHIFT Z  &kp X         &kp C               &kp V    &kp B                                    &kp N        &lt 6 M  &kp COMMA            &kp DOT         &mt RIGHT_SHIFT SLASH
 &lt 3 ESC         &kp LEFT_WIN  &mt LEFT_ALT GRAVE  &kp INS  &lt 4 SPACE  &lt 1 TAB    &kp BACKSPACE  &lt 1 ENTER           &lt 1 RIGHT_BRACKET  &kp LANGUAGE_1  &lt 3 LANGUAGE_2
             >;
