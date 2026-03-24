@@ -144,7 +144,7 @@
         };
 
         ToggleIME {
-            bindings = <&kp LANG_ZENKAKUHANKAKU>;
+            bindings = <&kp LC(SPACE)>;
             key-positions = <8 9>;
         };
     };
