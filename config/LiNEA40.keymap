@@ -213,7 +213,7 @@
 
         FUNCTION {
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4   &kp F5                            &trans     &trans           &mkp MCLK    &trans  &kp LG(R)
+&kp F1  &kp F2  &kp F3  &kp F4   &mo SNIPE                         &trans     &trans           &mkp MCLK    &trans  &kp LG(R)
 &kp F6  &kp F7  &kp F8  &kp F9   &kp F10                           &trans     &mkp LCLK        &mkp RCLK    &trans  &kp LC(LS(ESCAPE))
 &trans  &trans  &trans  &kp F11  &kp F12                           &trans     &kp LC(LS(TAB))  &kp LC(TAB)  &trans  &kp LC(LA(INS))
 &trans  &trans  &trans  &trans   &trans   &trans    &kp BACKSPACE  &kp ENTER                   &trans       &trans  &trans
@@ -252,10 +252,10 @@
 
         SNIPE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans          &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                    &kp LG(SPACE)  &kp LC(UP_ARROW)  &mkp MCLK    &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)
+&trans  &trans  &trans  &trans  &trans                    &trans         &mkp LCLK         &mkp RCLK    &trans  &trans
+&trans  &trans  &trans  &trans  &trans                    &trans         &kp LC(LS(TAB))   &kp LC(TAB)  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                           &trans       &trans  &trans
             >;
         };
     };
