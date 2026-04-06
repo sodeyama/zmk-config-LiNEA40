@@ -332,7 +332,7 @@
 &trans  &trans  &trans  &trans  &trans                            &trans        &trans    &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                            &trans        &trans    &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                            &kp LG(TAB)   &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp LG(TAB)    &trans                  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans         &trans                  &trans  &trans  &trans
             >;
         };
     };
