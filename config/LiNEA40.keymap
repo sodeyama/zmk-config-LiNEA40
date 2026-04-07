@@ -16,7 +16,8 @@
 #define SCROLL 5
 #define WIRELESS 6
 #define SNIPE 7
-#define WIN_CURSOR 8
+#define WIN_MODE 8
+#define WIN_CURSOR 9
 
 &mt { tapping-term-ms = <150>; };
 
@@ -155,6 +156,15 @@
         };
     };
 
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        win_cursor_condition {
+            if-layers = <CURSOR WIN_MODE>;
+            then-layer = <WIN_CURSOR>;
+        };
+    };
+
     macros {
         toggle_ime: toggle_ime {
             compatible = "zmk,behavior-macro";
@@ -171,7 +181,7 @@
         bt_win: bt_win {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 1 &tog WIN_CURSOR>;
+            bindings = <&bt BT_SEL 1 &tog WIN_MODE>;
         };
     };
 
@@ -325,13 +335,24 @@
             >;
         };
 
-        //8 Windows mode: override Mission Control -> Win+Tab
+        //8 Windows mode flag (all transparent, used as conditional layer trigger)
+
+        WIN_MODE {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans          &trans  &trans  &trans
+            >;
+        };
+
+        //9 Conditional: CURSOR + WIN_MODE -> override Mission Control to Win+Tab
 
         WIN_CURSOR {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                            &trans        &trans    &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                            &trans        &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                            &kp LG(TAB)   &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                            &kp LG(TAB)  &trans    &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans         &trans                  &trans  &trans  &trans
             >;
         };
