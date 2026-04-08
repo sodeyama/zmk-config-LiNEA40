@@ -18,6 +18,8 @@
 #define SNIPE 7
 #define WIN_MODE 8
 #define WIN_CURSOR 9
+#define UBUNTU_MODE 10
+#define UBUNTU_CURSOR 11
 
 &mt { tapping-term-ms = <150>; };
 
@@ -163,6 +165,11 @@
             if-layers = <CURSOR WIN_MODE>;
             then-layer = <WIN_CURSOR>;
         };
+
+        ubuntu_cursor_condition {
+            if-layers = <CURSOR UBUNTU_MODE>;
+            then-layer = <UBUNTU_CURSOR>;
+        };
     };
 
     macros {
@@ -186,6 +193,14 @@
             wait-ms = <100>;
             tap-ms = <100>;
             bindings = <&bt BT_SEL 1 &tog WIN_MODE>;
+        };
+
+        bt_ubuntu: bt_ubuntu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <100>;
+            tap-ms = <100>;
+            bindings = <&bt BT_SEL 2 &tog UBUNTU_MODE>;
         };
 
     };
@@ -320,7 +335,7 @@
 
         WIRELESS {
             bindings = <
-&bt_mac       &bt_win       &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                         &bt_mac         &bt_win       &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&bt_mac       &bt_win       &bt_ubuntu    &bt BT_SEL 3  &bt BT_SEL 4                         &bt_mac         &bt_win       &bt_ubuntu    &bt BT_SEL 3  &bt BT_SEL 4
 &trans        &trans        &trans        &trans        &trans                               &trans          &trans        &trans        &trans        &trans
 &trans        &trans        &trans        &trans        &trans                               &trans          &trans        &trans        &trans        &bt BT_CLR
 &trans        &trans        &trans        &trans        &trans        &trans    &bootloader  &studio_unlock                &trans        &trans        &bt BT_CLR_ALL
@@ -359,6 +374,28 @@
 &trans  &trans  &trans  &trans  &trans                            &trans        &trans    &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                            &kp LG(TAB)  &trans    &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans         &trans                  &trans  &trans  &trans
+            >;
+        };
+
+        //10 Ubuntu mode flag (all transparent, used as conditional layer trigger)
+
+        UBUNTU_MODE {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans          &trans  &trans  &trans
+            >;
+        };
+
+        //11 Conditional: CURSOR + UBUNTU_MODE -> override Mission Control to Super key
+
+        UBUNTU_CURSOR {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                            &trans     &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                            &trans     &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                            &kp LGUI   &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans         &trans                &trans  &trans  &trans
             >;
         };
     };
