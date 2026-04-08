@@ -388,14 +388,14 @@
             >;
         };
 
-        //11 Conditional: CURSOR + UBUNTU_MODE -> override Mission Control to Super key
+        //11 Conditional: CURSOR + UBUNTU_MODE -> override Mac keys for Ubuntu
 
         UBUNTU_CURSOR {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                            &trans     &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                            &trans     &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                            &kp LGUI   &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans         &trans                &trans  &trans  &trans
+&trans  &trans  &trans  &trans      &trans                                &trans     &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &kp PSCRN   &kp PSCRN                             &trans     &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans      &kp LS(PSCRN)                         &kp LGUI   &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans      &trans         &trans    &trans       &trans                &trans  &trans  &trans
             >;
         };
     };
