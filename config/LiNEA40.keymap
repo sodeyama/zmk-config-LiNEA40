@@ -21,6 +21,7 @@
 #define UBUNTU_MODE 10
 #define UBUNTU_CURSOR 11
 #define IPAD_MODE 12
+#define IPAD_CURSOR 13
 
 &mt { tapping-term-ms = <150>; };
 
@@ -177,6 +178,11 @@
         ubuntu_cursor_condition {
             if-layers = <CURSOR UBUNTU_MODE>;
             then-layer = <UBUNTU_CURSOR>;
+        };
+
+        ipad_cursor_condition {
+            if-layers = <CURSOR IPAD_MODE>;
+            then-layer = <IPAD_CURSOR>;
         };
     };
 
@@ -423,6 +429,17 @@
 &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans          &trans  &trans  &trans
+            >;
+        };
+
+        //13 Conditional: CURSOR + IPAD_MODE -> override Mission Control to Cmd+Tab
+
+        IPAD_CURSOR {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                            &trans        &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                            &trans        &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                            &kp LG(TAB)  &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp LG(TAB)   &trans                  &trans  &trans  &trans
             >;
         };
     };
