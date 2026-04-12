@@ -225,6 +225,15 @@
             bindings = <&bt BT_SEL 4 &tog IPAD_MODE>;
         };
 
+        globe_up: globe_up {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press &kp C_AC_NEXT_KEYBOARD_LAYOUT_SELECT>,
+                <&macro_tap &kp UP_ARROW>,
+                <&macro_release &kp C_AC_NEXT_KEYBOARD_LAYOUT_SELECT>;
+        };
+
     };
 
     behaviors {
@@ -432,14 +441,14 @@
             >;
         };
 
-        //13 Conditional: CURSOR + IPAD_MODE -> override Mission Control to Cmd+Tab
+        //13 Conditional: CURSOR + IPAD_MODE -> override Mission Control to Globe+Up (App Switcher)
 
         IPAD_CURSOR {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                            &trans        &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                            &trans        &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                            &kp LG(TAB)  &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp LG(TAB)   &trans                  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                            &trans       &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                            &trans       &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                            &globe_up    &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &globe_up      &trans                 &trans  &trans  &trans
             >;
         };
     };
