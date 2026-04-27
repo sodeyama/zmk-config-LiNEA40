@@ -21,13 +21,22 @@ A・Z・Alt(GRAVE) の3キーを再配置：
 &lt 3 ESC         &kp LEFT_WIN  &mt LEFT_ALT GRAVE  &kp INS  &lt 4 SPACE  &lt 1 TAB    &kp BACKSPACE  &lt 1 ENTER           &lt 6 RIGHT_BRACKET  &tog 3  &mo 3
 ```
 
-## 変更後の状態
+## 変更後の状態（最終形 / 2回目の入れ替え後）
+
+2段目1列目を A+Shift、3段目1列目を Ctrl 単独に再入れ替え。
 
 ```dts
 &kp Q             &kp W         &kp E               &kp R    &lt_hp SNIPE T                              &kp Y        &kp U    &kp I                &kp O           &kp P
+&mt_bal LEFT_SHIFT A    &kp S         &kp D               &kp F    &lt_hp 3 G                                    &kp H        &kp J    &kp K                &kp L           &mt_bal RIGHT_CONTROL MINUS
+&kp LEFT_CONTROL  &kp X         &kp C               &kp V    &kp B                                    &kp N        &kp M    &kp COMMA            &kp DOT         &mt_bal RIGHT_SHIFT SLASH
+&lt 3 ESC         &kp LEFT_WIN  &kp Z  &kp INS  &lt 4 SPACE  &lt 1 TAB    &kp BACKSPACE  &lt 1 ENTER           &lt 6 RIGHT_BRACKET  &tog 3  &mo 3
+```
+
+### 中間状態（参考 / 1回目の入れ替え時点。コミット f1495fa）
+
+```dts
 &kp LEFT_CONTROL    &kp S         &kp D               &kp F    &lt_hp 3 G                                    &kp H        &kp J    &kp K                &kp L           &mt_bal RIGHT_CONTROL MINUS
 &mt_bal LEFT_SHIFT A  &kp X         &kp C               &kp V    &kp B                                    &kp N        &kp M    &kp COMMA            &kp DOT         &mt_bal RIGHT_SHIFT SLASH
-&lt 3 ESC         &kp LEFT_WIN  &kp Z  &kp INS  &lt 4 SPACE  &lt 1 TAB    &kp BACKSPACE  &lt 1 ENTER           &lt 6 RIGHT_BRACKET  &tog 3  &mo 3
 ```
 
 ## 戻し方
